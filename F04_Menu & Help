@@ -1,0 +1,53 @@
+# sebelum login
+Tx_belumlogin = """
+=========== HELP ===========
+
+Kamu belum login sebagai role apapun. Silahkan login terlebih dahulu.
+
+Login: Masuk ke dalam akun yang sudah terdaftar
+Register: Membuat akun baru
+
+Footnote: 
+Untuk menggunakan aplikasi, silahkan masukkan nama fungsi yang terdaftar
+Jangan lupa untuk memasukkan input yang valid
+"""
+# Agent_sudah login
+Tx_AGTsudahLogin = """
+=========== HELP ===========
+
+Halo Agent Purry. Kamu memanggil command HELP. Kamu memilih jalan yang benar, semoga kamu tidak sesat kemudian. Berikut adalah hal-hal yang dapat kamu lakukan sekarang:
+
+Logout: Keluar dari akun yang sedang digunakan
+Inventory: Melihat owca-dex yang dimiliki oleh Agent
+
+Footnote: 
+Untuk menggunakan aplikasi, silahkan masukkan nama fungsi yang terdaftar
+Jangan lupa untuk memasukkan input yang valid
+"""
+Tx_ADMsudahLogin = """
+=========== HELP ===========
+
+Selamat datang, Admin. Berikut adalah hal-hal yang dapat kamu lakukan:
+
+Logout: Keluar dari akun yang sedang digunakan
+Shop: Melakukan manajemen pada SHOP sebagai tempat jual beli peralatan Agent
+
+
+# ...dan seterusnya
+
+Footnote: 
+Untuk menggunakan aplikasi, silahkan masukkan nama fungsi yang terdaftar
+Jangan lupa untuk memasukkan input yang valid
+
+"""
+
+kondisi_login = input()
+if kondisi_login == "belum":
+    print(Tx_belumlogin)
+elif kondisi_login == "sudah":
+    user = input()
+    if user == "Agent":
+        print(Tx_AGTsudahLogin)
+    elif user == "Admin":
+        print(Tx_ADMsudahLogin)
+        
