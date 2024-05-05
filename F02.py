@@ -1,5 +1,29 @@
-from F01 import user
-from F01 import password
+import os
+
+def load_data(data, x):
+    list = []
+    with open(data, 'r') as file:
+        # Lewati header
+        file.readline()
+        nilai = ''
+        kolom = 0
+        for line in file:
+            for char in line:
+                if char == ';':  # akhir nilai
+                    if kolom == x:
+                        list.append(nilai)
+                    nilai = ''
+                    kolom += 1
+                elif char == '\n':  # akhir baris
+                    if kolom == x:
+                        list.append(nilai)
+                    nilai = ''
+                    kolom = 0
+                else:
+                    nilai += char
+    return list
+username = load_data('user.csv', 1)
+password = load_data('user.csv', 2)
 print("Login")
 #def login(user,password):
 status = False
