@@ -22,23 +22,24 @@ def load_data(data, x):
                 else:
                     nilai += char
     return list
+#from F01 import 
 username = load_data('user.csv', 1)
 password = load_data('user.csv', 2)
 print("Login")
 #def login(user,password):
 status = False
 loginu=[]
-def login_system(x, y, user, password, status, loginu):
-    for i in range (len(user)) :
-        if x==user[i] and y==password[i] and status != True:
+def login_system(x, y, username, password, status, loginu):
+    for i in range (len(username)) :
+        if x==username[i] and y==password[i] and status != True:
             status=True
             loginu.append(x)
             print(f"Selamat datang, Agent {x}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.")
             break
-        elif x!=user[i] and y==password[i] :
+        elif x!=username[i] and y==password[i] :
             print("Username tidak terdaftar!")
             break
-        elif x==user[i] and y!=password[i]:
+        elif x==username[i] and y!=password[i]:
             print("Password salah!")
             break
         elif status==True :
