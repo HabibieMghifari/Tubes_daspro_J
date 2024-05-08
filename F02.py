@@ -27,12 +27,21 @@ username = load_data('user.csv', 1)
 password = load_data('user.csv', 2)
 print("Login")
 #def login(user,password):
-status = False
+admin=False
 loginu=[]
-def login_system(x, y, username, password, status, loginu):
+status=False
+def login_system(x, y, username, password, loginu):
+    global status
+    global admin
     for i in range (len(username)) :
-        if x==username[i] and y==password[i] and status != True:
-            status=True
+        if x==username[0] and y==password[i] and status != True:
+            status = True
+            admin = True
+            loginu.append(x)
+            print(f"Selamat datang, Agent {x}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.")
+            break
+        elif x==username[i] and y==password[i] and status != True:
+            status = True
             loginu.append(x)
             print(f"Selamat datang, Agent {x}!\nMasukkan command “help” untuk daftar command yang dapat kamu panggil.")
             break
@@ -50,4 +59,4 @@ def login_system(x, y, username, password, status, loginu):
 #login(x,y)
 x=input("Username : ")
 y=input("Password : ")
-login_system(x, y, username, password, status, loginu)
+login_system(x, y, username, password, loginu)
