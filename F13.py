@@ -43,10 +43,7 @@ def monster_adder(filename, type, atk_power, def_power, hp):
     with open(filename, 'a') as file:
         file.write(f"{next_id};{type};{atk_power};{def_power};{hp}\n")
 
-from F02 import admin
-z=0
-if admin == True :
-    print("Selamat Datang Pada Monster management!\n1. Tampilkan Semua Monster\n2. Tambah Monster\n3. Keluar")
+def monster_management(z):
     while z<4:
         z=int(input(f"Masukkan Pilihan Anda!\n"))
         if z == 1 :
@@ -69,3 +66,13 @@ if admin == True :
         elif z==3:
             print("Selamat tinggal!")
             break
+from F02 import admin #nanti klo udh disatuin gausah pake import admin, langsung aja if admin==true (abis dipilih dari menu ya btw)
+z=0
+if admin == True :
+    print("Selamat Datang Pada Monster management!\n1. Tampilkan Semua Monster\n2. Tambah Monster\n3. Keluar")
+    monster_management(z)
+else :
+    print("Maaf fungsi ini khusus admin!")
+
+
+
